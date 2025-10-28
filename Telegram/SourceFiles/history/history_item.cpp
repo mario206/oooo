@@ -2566,6 +2566,7 @@ bool HistoryItem::allowsReschedule() const {
 }
 
 bool HistoryItem::allowsForward() const {
+	return true; //todo mario
 	return !isService()
 		&& isRegular()
 		&& !forbidsForward()
@@ -2627,10 +2628,12 @@ bool HistoryItem::canStopPoll() const {
 }
 
 bool HistoryItem::forbidsForward() const {
+	return false;//todo mario
 	return (_flags & MessageFlag::NoForwards);
 }
 
 bool HistoryItem::forbidsSaving() const {
+	return false;//todo mario
 	if (forbidsForward()) {
 		return true;
 	} else if (const auto invoice = _media ? _media->invoice() : nullptr) {
