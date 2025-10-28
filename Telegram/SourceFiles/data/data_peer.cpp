@@ -1630,6 +1630,7 @@ void PeerData::processTopics(const MTPVector<MTPForumTopic> &topics) {
 }
 
 bool PeerData::allowsForwarding() const {
+	return true; //todo mario
 	if (isUser()) {
 		return true;
 	} else if (const auto channel = asChannel()) {
