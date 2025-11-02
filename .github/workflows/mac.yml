@@ -38,11 +38,11 @@ on:
       - 'Telegram/configure.bat'
 
 jobs:
-
   macos:
     name: MacOS
     runs-on: macos-15-intel
-
+    timeout-minutes: 540
+    
     strategy:
       matrix:
         defines:
